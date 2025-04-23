@@ -1,21 +1,16 @@
 #include <iostream>
 #include <stack>
+#include "stack.cpp"
 
 using namespace std;
 
-
 int main() {
 
-    stack <int> st;
+    MyStack stack;
+    stack.push(1);
+    stack.push(2);
 
-    st.push(1);
-    st.push(2);
-    st.push(3);
-
-    while (!st.empty()) {
-        cout << st.top() << endl;
-        st.pop();
-    }
+    cout << stack.peek() << endl;
 
     return 0;
 }
