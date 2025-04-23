@@ -1,18 +1,17 @@
 #include <iostream>
-#include <stack>
-#include "stack.cpp"
+#include "stack.h"
 
 using namespace std;
 
 int main() {
 
-    MyStack stack;
+    Stack MyStack;
 
 
-    if (stack.isEmpty()){
+    if (MyStack.isEmpty()){
         cout << "Stack is empty" << endl;
     } else {
-        cout << "Top element:" << stack.peek() << endl;
+        cout << "Top element:" << MyStack.peek() << endl;
     }
 
     return 0;

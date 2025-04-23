@@ -1,8 +1,12 @@
+#ifndef STACK_H
+#define STACK_H
+#include <stdexcept>
+
 #include <iostream>
 using namespace std;
 
 // In this class I have defined the stack data structure using a single linked list
-class MyStack {
+class Stack {
     private:
         // Node structure as defined in our exercise
         struct Node {
@@ -19,8 +23,14 @@ class MyStack {
         Node* top; // Pointer to the top of the stack
 
         // Initialize top to nullptr
-        MyStack() : top(nullptr) {}
+        Stack() : top(nullptr) {}
 
+        // Destructor to free memory
+        ~Stack() {
+            while (!isEmpty()){
+                pop();
+            }
+        }
         // Push operation
         void push(int value){
             Node* newNode = new Node(value, top);
@@ -54,4 +64,4 @@ class MyStack {
         }
     };
 
-    
+#endif // STACK_H
