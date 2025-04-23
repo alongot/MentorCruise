@@ -17,10 +17,25 @@ class MyStack {
         };
     public:
         Node* top; // Pointer to the top of the stack
+
+        // Initialize top to nullptr
+        MyStack() : top(nullptr) {}
+
         // Push operation
         void push(int value){
             Node* newNode = new Node(value, top);
             top = newNode;
+        }
+
+        // Pop operation, remove value at the top of stack LIFO order
+        void pop(){
+            if(top != nullptr) {
+                Node* temp = top;
+                top = top->next;
+                delete temp;
+            } else {
+                cout << "Stack is empty" << endl;
+            }
         }
 
         // Peek operation
@@ -29,8 +44,14 @@ class MyStack {
             return top->value;
         } else {
             cout << "Stack is empty" << endl;
+            return -1;
         }
-    }
+        }
 
+        // IsEmpty operation
+        bool isEmpty(){
+            return top == nullptr;
+        }
     };
+
     
