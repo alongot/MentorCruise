@@ -46,5 +46,11 @@
         "variant": "cpp",
         "algorithm": "cpp",
         "queue": "cpp"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
     }
 }
