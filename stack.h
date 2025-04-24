@@ -12,12 +12,7 @@ class Stack {
         struct Node {
             int value;
             Node* next;
-        
-        // Create a constructor, which we will initialize the value and set the pointer
-            Node(int value, Node* next = nullptr) {
-                this->value = value;
-                this->next = next;
-            }
+            
         };
     public:
         Node* top; // Pointer to the top of the stack
@@ -33,9 +28,12 @@ class Stack {
         }
         // Push operation
         void push(int value){
-            Node* newNode = new Node(value, top);
+            Node* newNode = new Node;
+            newNode->value = value;
+            newNode->next = top;
             top = newNode;
         }
+        
 
         // Pop operation, remove value at the top of stack LIFO order
         void pop(){
