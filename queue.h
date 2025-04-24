@@ -12,9 +12,9 @@ class Queue{
         Node* next;
     };
 
+    public:
     Node* front;
     Node* rear;
-    public:
      // Check is the queue is empty
      bool isEmpty(){
         return front == nullptr;
@@ -43,7 +43,8 @@ class Queue{
             rear = newnode;
         }
         else{
-            rear->next = newnode;       
+            rear->next = newnode; 
+            rear = newnode;      
         }
     }
 

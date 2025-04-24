@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(StackTests)
+project(DataStructureTests)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
 # Add your test executable
-add_executable(StackTests stack_test.cpp)
+add_executable(DataStructureTests Data_Structures_Test.cpp)
 
 # Link Boost.Test
-target_link_libraries(StackTests Boost::unit_test_framework)
+target_link_libraries(DataStructureTests Boost::unit_test_framework)
