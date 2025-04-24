@@ -13,7 +13,7 @@ class Stack {
             int value;
             Node* next;
             
-        };
+        }; // End of struct node
     public:
         Node* top; // Pointer to the top of the stack
 
@@ -25,14 +25,15 @@ class Stack {
             while (!isEmpty()){
                 pop();
             }
-        }
+        } // End of stack destructor
+
         // Push operation
         void push(int value){
             Node* newNode = new Node;
             newNode->value = value;
             newNode->next = top;
             top = newNode;
-        }
+        } // End of push function
         
 
         // Pop operation, remove value at the top of stack LIFO order
@@ -44,7 +45,7 @@ class Stack {
             } else {
                 cout << "Stack is empty" << endl;
             }
-        }
+        } // End of pop function
 
         // Peek operation
         int peek(){
@@ -53,13 +54,27 @@ class Stack {
         } else {
             cout << "Stack is empty" << endl;
             return -1;
-        }
-        }
+         }
+        } // End of peek function
 
         // IsEmpty operation
         bool isEmpty(){
             return top == nullptr;
-        }
-    };
+        } // End of IsEmtpy function
+
+        void Display() {
+            if(isEmpty()) {
+                cout << "Linked list is empty\n";
+                return;
+            }
+            Node* tmp = top;
+            while (tmp != nullptr) {
+                cout << tmp->value << endl;
+                tmp = tmp->next;
+            }
+        
+        } // End of display function
+
+    }; // End of stack class
 
 #endif // STACK_H

@@ -16,6 +16,9 @@ int main() {
     MyStack.pop();
     cout << "Top element after pop: " << MyStack.peek() << endl << endl;
 
+    cout << "Displaying all values in my stack" << endl;
+    MyStack.Display();
+
     //Queue testing
     Queue MyQueue;
     MyQueue.enqueue(11);
@@ -32,6 +35,8 @@ int main() {
 
     // Singly linked list testing
     Singly_Linked_List My_Linked_List;
+
+    cout << "Appending values to singly linked list\n";
     My_Linked_List.append(11);
     My_Linked_List.append(0);
     My_Linked_List.append(2);
@@ -43,7 +48,10 @@ int main() {
     My_Linked_List.append(3);
     My_Linked_List.Display();
 
+    cout << "Deleting value from linked list\n";
 
+    My_Linked_List.deletion();
 
+    My_Linked_List.Display();
     return 0;
-}
+} // End of main

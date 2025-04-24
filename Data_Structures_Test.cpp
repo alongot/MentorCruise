@@ -2,6 +2,7 @@
 #include <boost/test/included/unit_test.hpp>
 #include "stack.h"
 #include "queue.h"
+#include "singly_linked_list.h"
 
 BOOST_AUTO_TEST_CASE(PushPopPeekOperations) {
     Stack s;
@@ -66,4 +67,39 @@ BOOST_AUTO_TEST_CASE(TopFunctionTest) {
     q.Top();  // prints 100
 
     BOOST_TEST(q.front->data == 100);
+}
+
+BOOST_AUTO_TEST_CASE(SinglyLinkedListTest) {
+    Singly_Linked_List list;
+
+    // Initially empty
+    cout << "Checking if list is initially empty..." << endl;
+    BOOST_TEST(list.isEmpty());
+
+    // Append some values
+    cout << "Appending values 1, 2, 3 to the list..." << endl;
+    list.append(1);
+    list.append(2);
+    list.append(3);
+
+    cout << "Checking if list is no longer empty..." << endl;
+    BOOST_TEST(!list.isEmpty());
+
+    // Access the top node using the getter method
+    auto temp = list.getTop(); 
+    BOOST_REQUIRE(temp != nullptr);
+    cout << "First node data: " << temp->data << endl;
+    BOOST_TEST(temp->data == 1);
+    
+    temp = temp->next;
+    BOOST_REQUIRE(temp != nullptr);
+    cout << "Second node data: " << temp->data << endl;
+    BOOST_TEST(temp->data == 2);
+
+    temp = temp->next;
+    BOOST_REQUIRE(temp != nullptr);
+    cout << "Third node data: " << temp->data << endl;
+    BOOST_TEST(temp->data == 3);
+
+    BOOST_TEST(temp->next == nullptr); // Should be the end of the list
 }
