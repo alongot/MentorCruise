@@ -154,7 +154,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=StackTests
+CMAKE_PROJECT_NAME:STATIC=DataStructureTests
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -220,6 +220,15 @@ CMAKE_TAPI:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/tapi
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Value Computed by CMake
+DataStructureTests_BINARY_DIR:STATIC=/Users/alon/MentorCruise/Data Structures 1/Stack/build
+
+//Value Computed by CMake
+DataStructureTests_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+DataStructureTests_SOURCE_DIR:STATIC=/Users/alon/MentorCruise/Data Structures 1/Stack
 
 //Value Computed by CMake
 StackTests_BINARY_DIR:STATIC=/Users/alon/MentorCruise/Data Structures 1/Stack/build

@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named StackTests
+# Target rules for targets named DataStructureTests
 
 # Build rule for target.
-StackTests: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 StackTests
-.PHONY : StackTests
+DataStructureTests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DataStructureTests
+.PHONY : DataStructureTests
 
 # fast build rule for target.
-StackTests/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/build
-.PHONY : StackTests/fast
+DataStructureTests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/build
+.PHONY : DataStructureTests/fast
 
-stack_test.o: stack_test.cpp.o
-.PHONY : stack_test.o
+Data_Structures_Test.o: Data_Structures_Test.cpp.o
+.PHONY : Data_Structures_Test.o
 
 # target to build an object file
-stack_test.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/stack_test.cpp.o
-.PHONY : stack_test.cpp.o
+Data_Structures_Test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/Data_Structures_Test.cpp.o
+.PHONY : Data_Structures_Test.cpp.o
 
-stack_test.i: stack_test.cpp.i
-.PHONY : stack_test.i
+Data_Structures_Test.i: Data_Structures_Test.cpp.i
+.PHONY : Data_Structures_Test.i
 
 # target to preprocess a source file
-stack_test.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/stack_test.cpp.i
-.PHONY : stack_test.cpp.i
+Data_Structures_Test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/Data_Structures_Test.cpp.i
+.PHONY : Data_Structures_Test.cpp.i
 
-stack_test.s: stack_test.cpp.s
-.PHONY : stack_test.s
+Data_Structures_Test.s: Data_Structures_Test.cpp.s
+.PHONY : Data_Structures_Test.s
 
 # target to generate assembly for a file
-stack_test.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/stack_test.cpp.s
-.PHONY : stack_test.cpp.s
+Data_Structures_Test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/Data_Structures_Test.cpp.s
+.PHONY : Data_Structures_Test.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... StackTests"
-	@echo "... stack_test.o"
-	@echo "... stack_test.i"
-	@echo "... stack_test.s"
+	@echo "... DataStructureTests"
+	@echo "... Data_Structures_Test.o"
+	@echo "... Data_Structures_Test.i"
+	@echo "... Data_Structures_Test.s"
 .PHONY : help
 
 

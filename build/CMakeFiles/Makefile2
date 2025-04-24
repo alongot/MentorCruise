@@ -63,11 +63,11 @@ CMAKE_BINARY_DIR = "/Users/alon/MentorCruise/Data Structures 1/Stack/build"
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/StackTests.dir/all
+all: CMakeFiles/DataStructureTests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/StackTests.dir/codegen
+codegen: CMakeFiles/DataStructureTests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -75,40 +75,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/StackTests.dir/clean
+clean: CMakeFiles/DataStructureTests.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/StackTests.dir
+# Target rules for target CMakeFiles/DataStructureTests.dir
 
 # All Build rule for target.
-CMakeFiles/StackTests.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" --progress-num=1,2 "Built target StackTests"
-.PHONY : CMakeFiles/StackTests.dir/all
+CMakeFiles/DataStructureTests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" --progress-num=1,2 "Built target DataStructureTests"
+.PHONY : CMakeFiles/DataStructureTests.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/StackTests.dir/rule: cmake_check_build_system
+CMakeFiles/DataStructureTests.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/StackTests.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/DataStructureTests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" 0
-.PHONY : CMakeFiles/StackTests.dir/rule
+.PHONY : CMakeFiles/DataStructureTests.dir/rule
 
 # Convenience name for target.
-StackTests: CMakeFiles/StackTests.dir/rule
-.PHONY : StackTests
+DataStructureTests: CMakeFiles/DataStructureTests.dir/rule
+.PHONY : DataStructureTests
 
 # codegen rule for target.
-CMakeFiles/StackTests.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target StackTests"
-.PHONY : CMakeFiles/StackTests.dir/codegen
+CMakeFiles/DataStructureTests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir="/Users/alon/MentorCruise/Data Structures 1/Stack/build/CMakeFiles" --progress-num=1,2 "Finished codegen for target DataStructureTests"
+.PHONY : CMakeFiles/DataStructureTests.dir/codegen
 
 # clean rule for target.
-CMakeFiles/StackTests.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/StackTests.dir/build.make CMakeFiles/StackTests.dir/clean
-.PHONY : CMakeFiles/StackTests.dir/clean
+CMakeFiles/DataStructureTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructureTests.dir/build.make CMakeFiles/DataStructureTests.dir/clean
+.PHONY : CMakeFiles/DataStructureTests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

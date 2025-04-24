@@ -1,5 +1,5 @@
-CMakeFiles/StackTests.dir/stack_test.cpp.o: \
-  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/stack_test.cpp \
+CMakeFiles/DataStructureTests.dir/Data_Structures_Test.cpp.o: \
+  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Data_Structures_Test.cpp \
   /usr/local/include/boost/test/included/unit_test.hpp \
   /usr/local/include/boost/test/impl/compiler_log_formatter.ipp \
   /usr/local/include/boost/test/output/compiler_log_formatter.hpp \
