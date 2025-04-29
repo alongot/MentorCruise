@@ -1,0 +1,5 @@
+/Users/alon/MentorCruise/Data Structures 1/Stack/Tests/build/CMakeFiles/singly_linked_list_test.dir
+/Users/alon/MentorCruise/Data Structures 1/Stack/Tests/build/CMakeFiles/stack_test.dir
+/Users/alon/MentorCruise/Data Structures 1/Stack/Tests/build/CMakeFiles/queue_test.dir
+/Users/alon/MentorCruise/Data Structures 1/Stack/Tests/build/CMakeFiles/edit_cache.dir
+/Users/alon/MentorCruise/Data Structures 1/Stack/Tests/build/CMakeFiles/rebuild_cache.dir
