@@ -4,7 +4,6 @@ using namespace std;
 
 
 class Queue{
-
     private:
         // Create a node object
         struct Node{

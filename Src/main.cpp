@@ -1,8 +1,8 @@
 #include <iostream>
-#include "stack.h"
+#include "../Data_Structures/stack.h"
 #include <array>
-#include "queue.h"
-#include "singly_linked_list.h"
+#include "../Data_Structures/queue.h"
+#include "../Data_Structures/singly_linked_list.h"
 
 using namespace std;
 
