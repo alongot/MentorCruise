@@ -22,22 +22,24 @@ class Stack {
 
         // Destructor to free memory
         ~Stack() {
-            while (!isEmpty()){
-                pop();
+            while (!IsEmpty())
+            {
+                Pop();
             }
         } // End of stack destructor
 
         // Push operation
-        void push(int value){
+        void Push(int value)
+        {
             Node* newNode = new Node;
             newNode->value = value;
             newNode->next = top;
             top = newNode;
         } // End of push function
-        
 
         // Pop operation, remove value at the top of stack LIFO order
-        void pop(){
+        void Pop()
+        {
             if(top != nullptr) {
                 Node* temp = top;
                 top = top->next;
@@ -48,22 +50,28 @@ class Stack {
         } // End of pop function
 
         // Peek operation
-        int peek(){
-        if(top != nullptr) {
-            return top->value;
-        } else {
-            cout << "Stack is empty" << endl;
-            return -1;
-         }
+        int Peek()
+        {
+            if (top != nullptr)
+            {
+                return top->value;
+            }
+            else
+            {
+                cout << "Stack is empty" << endl;
+                return -1;
+            }
         } // End of peek function
 
         // IsEmpty operation
-        bool isEmpty(){
+        bool IsEmpty()
+        {
             return top == nullptr;
         } // End of IsEmtpy function
 
         void Display() {
-            if(isEmpty()) {
+            if (IsEmpty())
+            {
                 cout << "Linked list is empty\n";
                 return;
             }

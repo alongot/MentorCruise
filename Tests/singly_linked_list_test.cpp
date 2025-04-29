@@ -7,20 +7,20 @@ using namespace std;
 
 // Test case for checking if the list is initially empty
 BOOST_AUTO_TEST_CASE(ListInitiallyEmpty) {
-    Singly_Linked_List list;
+    SinglyLinkedList list;
     cout << "Checking if list is initially empty..." << endl;
-    BOOST_TEST(list.isEmpty());
+    BOOST_TEST(list.IsEmpty());
 }
 
 // Test case for appending multiple values to the list
 BOOST_AUTO_TEST_CASE(AppendingMultipleElements) {
-    Singly_Linked_List list;
+    SinglyLinkedList list;
     cout << "Appending values 1, 2, 3 to the list..." << endl;
-    list.append(1);
-    list.append(2);
-    list.append(3);
+    list.Append(1);
+    list.Append(2);
+    list.Append(3);
 
-    auto temp = list.getTop();
+    auto temp = list.GetTop();
     BOOST_TEST(temp != nullptr);
     cout << "First node data: " << temp->data << endl;
     BOOST_TEST(temp->data == 1);
@@ -40,12 +40,12 @@ BOOST_AUTO_TEST_CASE(AppendingMultipleElements) {
 
 // Test case for accessing the top element after multiple appends
 BOOST_AUTO_TEST_CASE(TopElementAfterAppend) {
-    Singly_Linked_List list;
-    list.append(10);
-    list.append(20);
-    list.append(30);
-    
-    auto temp = list.getTop();
+    SinglyLinkedList list;
+    list.Append(10);
+    list.Append(20);
+    list.Append(30);
+
+    auto temp = list.GetTop();
     BOOST_TEST(temp != nullptr);
     cout << "Top node data: " << temp->data << endl;
     BOOST_TEST(temp->data == 10);
@@ -53,8 +53,8 @@ BOOST_AUTO_TEST_CASE(TopElementAfterAppend) {
 
 // Test case for verifying the correct behavior when accessing an empty list
 BOOST_AUTO_TEST_CASE(AccessingEmptyList) {
-    Singly_Linked_List list;
+    SinglyLinkedList list;
     cout << "Attempting to access top node of an empty list..." << endl;
-    auto temp = list.getTop();
+    auto temp = list.GetTop();
     BOOST_TEST(temp == nullptr);
 }

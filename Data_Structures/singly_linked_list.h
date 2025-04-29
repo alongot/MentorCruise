@@ -4,7 +4,8 @@
 #include <iostream>
 using namespace std;
 
-class Singly_Linked_List {
+class SinglyLinkedList
+{
 private:
     struct Node {
         int data;
@@ -17,10 +18,11 @@ private:
 
 public:
     // Make top pointer accesable
-    Singly_Linked_List() : top(nullptr) {}
+    SinglyLinkedList() : top(nullptr) {}
 
     // Constructor for list
-    ~Singly_Linked_List() {
+    ~SinglyLinkedList()
+    {
         Node* tmp = top;
         while (tmp != nullptr) {
             Node* nextNode = tmp->next;
@@ -28,15 +30,17 @@ public:
             tmp = nextNode;
         }
         top = nullptr;
-    }// End of singly linked list constructor
+    } // End of singly linked list constructor
 
     // Check if list is empty
-    bool isEmpty() const {
+    bool IsEmpty() const
+    {
         return top == nullptr;
     } // End of isempty
 
     // Append node into the list
-    void append(int data) {
+    void Append(int data)
+    {
         if (top == nullptr) {
             top = new Node(data);
             return;
@@ -46,23 +50,69 @@ public:
             tmp = tmp->next;
         }
         tmp->next = new Node(data);
-    }// End of append function
+    } // End of append function
 
-     // Delete node from the list
-    void deletion() {
-        if (top != nullptr) {
-            Node* temp = top;
+    void Deletion(int data)
+    {
+        if (IsEmpty())
+        {
+            cout << "Singly linked list is empty\n";
+            return;
+        }
+
+        if (top->data == data)
+        {
+            Node *temp = top;
             top = top->next;
             delete temp;
-        }else{
-            cout << "Singly linked list is empty\n";        
+            return;
         }
-    }// End of deletion function
 
+        Node *previous = nullptr;
+        Node *tmp = top;
+
+        while (tmp != nullptr)
+        {
+            if (tmp->data == data)
+            {
+                previous->next = tmp->next;
+                delete tmp;
+                return;
+            }
+            previous = tmp;
+            tmp = tmp->next;
+        }
+
+        cout << "Value not found in the list.\n";
+    } // End of deletion function
+
+    // Contains method, check if list contains target elemetn
+    bool Contains(int data)
+    {
+        if (IsEmpty())
+        {
+            cout << "Singly linked list is empty\n";
+            return false;
+        }
+        else
+        {
+            Node *tmp = top;
+            while (tmp != nullptr)
+            {
+                if (tmp->data == data)
+                {
+                    return true;
+                }
+                tmp = tmp->next;
+            }
+            return false;
+        }
+    }
 
     // Display linkedl ist
     void Display() const {
-        if(isEmpty()) {
+        if (IsEmpty())
+        {
             cout << "Linked list is empty\n";
             return;
         }
@@ -74,9 +124,10 @@ public:
         }
     }// End of display function
 
-    Node* getTop() const {
+    Node *GetTop() const
+    {
         return top;
-    }// End of getTop function
+    } // End of getTop function
 }; // End of Singly List Class
 
 #endif

@@ -9,20 +9,21 @@ using namespace std;
 int main() {
     // Stack testing
     Stack MyStack;
-    MyStack.push(10);
-    MyStack.push(20);   
-    MyStack.push(30);
+    MyStack.Push(10);
+    MyStack.Push(20);
+    MyStack.Push(30);
 
-    MyStack.pop();
-    cout << "Top element after pop: " << MyStack.peek() << endl << endl;
+    MyStack.Pop();
+    cout << "Top element after pop: " << MyStack.Peek() << endl
+         << endl;
 
     cout << "Displaying all values in my stack" << endl;
     MyStack.Display();
 
     //Queue testing
     Queue MyQueue;
-    MyQueue.enqueue(11);
-    MyQueue.enqueue(12);
+    MyQueue.Enqueue(11);
+    MyQueue.Enqueue(12);
 
     cout << "Display queue: \n";
     MyQueue.Display();
@@ -30,28 +31,40 @@ int main() {
     MyQueue.Top();
 
     cout << "Top of queue after dequeue: \n";
-    MyQueue.dequeue();
+    MyQueue.Dequeue();
     MyQueue.Top();
 
     // Singly linked list testing
-    Singly_Linked_List My_Linked_List;
+    SinglyLinkedList MyLinkedList;
 
     cout << "Appending values to singly linked list\n";
-    My_Linked_List.append(11);
-    My_Linked_List.append(0);
-    My_Linked_List.append(2);
+    MyLinkedList.Append(11);
+    MyLinkedList.Append(0);
+    MyLinkedList.Append(2);
 
-    My_Linked_List.Display();
-    
+    MyLinkedList.Display();
+
     cout << "Appending more values to linked list\n";
-    My_Linked_List.append(0);
-    My_Linked_List.append(3);
-    My_Linked_List.Display();
+    MyLinkedList.Append(0);
+    MyLinkedList.Append(3);
+    MyLinkedList.Display();
 
     cout << "Deleting value from linked list\n";
+    MyLinkedList.Deletion(11);
+    MyLinkedList.Display();
 
-    My_Linked_List.deletion();
+    int target;
+    cout << "Enter a number to check if it's in the list: ";
+    cin >> target;
 
-    My_Linked_List.Display();
+    if (MyLinkedList.Contains(target))
+    {
+        cout << "Linked list contains " << target << endl;
+    }
+    else
+    {
+        cout << "Linked list does not contain " << target << endl;
+    }
+
     return 0;
 } // End of main

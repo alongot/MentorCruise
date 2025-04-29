@@ -15,10 +15,11 @@ class Queue{
         Node* front;
         Node* rear;
         // Check is the queue is empty
-        bool isEmpty(){
+        bool IsEmpty()
+        {
             return front == nullptr;
-        }// end of isempty function
-        
+        } // end of isempty function
+
         // Create a queue constructor
         Queue(){
             front = NULL;
@@ -26,7 +27,8 @@ class Queue{
         } // End of queue constructor
 
         ~Queue(){
-            while(!isEmpty()){
+            while (!IsEmpty())
+            {
                 Node* temp = front;
                 front = front->next;
                 delete temp;
@@ -34,11 +36,13 @@ class Queue{
         } // End of queue destructor
 
         // Function to enqueue values to the front of the queue
-        void enqueue (int data){
+        void Enqueue(int data)
+        {
             Node* newnode = new Node();
             newnode->data = data;
             newnode->next = NULL;
-            if (isEmpty()){
+            if (IsEmpty())
+            {
                 front = newnode;
                 rear = newnode;
             }
@@ -49,8 +53,10 @@ class Queue{
         } // End of enqueue function
 
         // Function to dequque values in FIFO order
-        void dequeue(){
-            if (isEmpty()){
+        void Dequeue()
+        {
+            if (IsEmpty())
+            {
                 cout << "Queue is empty" << endl;
                 return;
             }
@@ -63,24 +69,30 @@ class Queue{
 
         // Function to see the queue
         void Display(){
-            if (isEmpty()){
+            if (IsEmpty())
+            {
                 cout << "Queue is empty" << endl;
                 return;
-            }else{
+            }
+            else
+            {
                 Node* temp = front;
                 while(temp != nullptr){
                     cout << temp->data << endl;
                     temp = temp->next;
                 }
-            }        
+            }
         }// End of display function
 
         //Function to see top of queue
         void Top(){
-            if (isEmpty()){
+            if (IsEmpty())
+            {
                 cout << "Queue is empty" << endl;
                 return;
-            }else{
+            }
+            else
+            {
                 Node* temp = front;
                 cout << temp->data << endl;
             }
