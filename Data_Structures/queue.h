@@ -57,8 +57,7 @@ class Queue{
         {
             if (IsEmpty())
             {
-                cout << "Queue is empty" << endl;
-                return;
+                throw::underflow_error("Queue is empty");
             }
             else{
                 Node* temp = front;

@@ -3,12 +3,21 @@
 #include "../Data_Structures/stack.h"
 #include <iostream>
 
+using namespace std;
+
 // Test if a new stack is empty
 BOOST_AUTO_TEST_CASE(StackIsInitiallyEmpty) {
     BOOST_TEST_MESSAGE("Testing: New stack should be empty.");
     Stack s;
     std::cout << "Is empty? " << std::boolalpha << s.IsEmpty() << std::endl;
     BOOST_TEST(s.IsEmpty());
+}
+
+// Test if you can pop on empty stack
+BOOST_AUTO_TEST_CASE(StackIsInitiallyEmpty) {
+    Stack s;
+    BOOST_TEST_MESSAGE("Popping on empty stack");
+    s.Pop(); 
 }
 
 // Test push of a single element

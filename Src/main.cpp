@@ -9,6 +9,12 @@ using namespace std;
 int main() {
     // Stack testing
     Stack MyStack;
+
+    //MyStack.Pop();
+
+    //cout << "Top element after pop: " << MyStack.Peek() << endl
+     //    << endl;
+         
     MyStack.Push(10);
     MyStack.Push(20);
     MyStack.Push(30);
@@ -22,6 +28,7 @@ int main() {
 
     //Queue testing
     Queue MyQueue;
+    //MyQueue.Dequeue();
     MyQueue.Enqueue(11);
     MyQueue.Enqueue(12);
 

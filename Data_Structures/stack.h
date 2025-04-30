@@ -40,27 +40,21 @@ class Stack {
         // Pop operation, remove value at the top of stack LIFO order
         void Pop()
         {
-            if(top != nullptr) {
-                Node* temp = top;
-                top = top->next;
-                delete temp;
-            } else {
-                cout << "Stack is empty" << endl;
-            }
+           if(IsEmpty()){
+            std::__throw_underflow_error("Stack is empty");
+           }
+            Node* temp = top;
+            top = top->next;
+            delete temp;
         } // End of pop function
 
         // Peek operation
         int Peek()
         {
-            if (top != nullptr)
-            {
-                return top->value;
+            if(IsEmpty()){
+                throw::underflow_error("Stack is empty");
             }
-            else
-            {
-                cout << "Stack is empty" << endl;
-                return -1;
-            }
+            return top->value;
         } // End of peek function
 
         // IsEmpty operation
@@ -72,7 +66,7 @@ class Stack {
         void Display() {
             if (IsEmpty())
             {
-                cout << "Linked list is empty\n";
+                cout << "Stack is empty\n";
                 return;
             }
             Node* tmp = top;
