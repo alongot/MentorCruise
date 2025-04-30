@@ -56,14 +56,13 @@ BOOST_AUTO_TEST_CASE(DequeueFIFOOrder) {
     BOOST_TEST(q.IsEmpty());
 }
 
-// Test dequeue on empty queue does not crash
-BOOST_AUTO_TEST_CASE(DequeueEmptyQueueSafe) {
+//Test dequeue on empty queue
+BOOST_AUTO_TEST_CASE(DequeueOnEmptyQueue) {
+    BOOST_TEST_MESSAGE("Testing: Dequeue on empty queue should throw an exception.");
     Queue q;
-    cout << "Attempting to dequeue from empty queue." << endl;
-    q.Dequeue(); // Should print warning, not crash
-    BOOST_TEST(q.IsEmpty());
+    std::cout << "Attempting dequeue on empty queue..." << std::endl;
+    BOOST_CHECK_THROW(q.Dequeue(), std::underflow_error);
 }
-
 // Test Top function on non-empty and empty queue
 BOOST_AUTO_TEST_CASE(TopFunctionTest) {
     Queue q;

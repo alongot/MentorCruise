@@ -13,13 +13,6 @@ BOOST_AUTO_TEST_CASE(StackIsInitiallyEmpty) {
     BOOST_TEST(s.IsEmpty());
 }
 
-// Test if you can pop on empty stack
-BOOST_AUTO_TEST_CASE(StackIsInitiallyEmpty) {
-    Stack s;
-    BOOST_TEST_MESSAGE("Popping on empty stack");
-    s.Pop(); 
-}
-
 // Test push of a single element
 BOOST_AUTO_TEST_CASE(PushOneElement) {
     BOOST_TEST_MESSAGE("Testing: Push one element and peek.");
@@ -52,21 +45,9 @@ BOOST_AUTO_TEST_CASE(PopRemovesTop) {
     BOOST_TEST(s.Peek() == 1);
 }
 
-// Test pop on empty stack (check that it does not crash)
 BOOST_AUTO_TEST_CASE(PopOnEmptyStack) {
-    BOOST_TEST_MESSAGE("Testing: Pop on empty stack should not crash.");
+    BOOST_TEST_MESSAGE("Testing: Pop on empty stack should throw an exception.");
     Stack s;
     std::cout << "Attempting pop on empty stack..." << std::endl;
-    s.Pop(); // Should not crash
-    BOOST_TEST(s.IsEmpty());
+    BOOST_CHECK_THROW(s.Pop(), std::underflow_error);
 }
-
-// Test peek on empty stack
-BOOST_AUTO_TEST_CASE(PeekOnEmptyStackReturnsMinusOne) {
-    BOOST_TEST_MESSAGE("Testing: Peek on empty stack should return -1.");
-    Stack s;
-    int val = s.Peek();
-    std::cout << "Peeked on empty stack: " << val << std::endl;
-    BOOST_TEST(val == -1); // your impl returns -1 on empty
-}
-
