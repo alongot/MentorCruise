@@ -1,82 +1,96 @@
 #ifndef STACK_H
 #define STACK_H
 #include <stdexcept>
+#include "optional.h"
 
 #include <iostream>
 using namespace std;
 
-// In this class I have defined the stack data structure using a single linked list
-class Stack {
-    private:
-        // Node structure as defined in our exercise
-        struct Node {
-            int value;
-            Node* next;
-            
-        }; // End of struct node
-    public:
-        Node* top; // Pointer to the top of the stack
+template <typename T>
+class Stack
+{
+private:
+    struct Node
+    {
+        T data;     // The value of the node
+        Node *next; // Pointer to the next node
+        // Constructor to initialize node
+        Node(const T &dataValue) : data(dataValue), next(nullptr) {}
+    };
+    Node *top; // Pointer to the front of the stack
 
-        // Initialize top to nullptr
-        Stack() : top(nullptr) {}
+public:
+    // Initialize top to nullptr
+    Stack() : top(nullptr) {}
 
-        // Destructor to free memory
-        ~Stack() {
-            while (!IsEmpty())
-            {
-                Pop();
-            }
-        } // End of stack destructor
-
-        // Push operation
-        void Push(int value)
+    // Destructor to free memory
+    ~Stack()
+    {
+        while (top != nullptr)
         {
-            Node* newNode = new Node;
-            newNode->value = value;
-            newNode->next = top;
-            top = newNode;
-        } // End of push function
-
-        // Pop operation, remove value at the top of stack LIFO order
-        void Pop()
-        {
-           if(IsEmpty()){
-            std::__throw_underflow_error("Stack is empty");
-           }
-            Node* temp = top;
+            Node *temp = top;
             top = top->next;
             delete temp;
-        } // End of pop function
+        }
+    } // End of stack destructor
 
-        // Peek operation
-        int Peek()
+    // Push operation
+    void Push(const T &value)
+    {
+        Node *newNode = new Node(value);
+        newNode->next = top;
+        top = newNode;
+    } // End of push function
+
+    // Pop operation, remove value at the top of stack LIFO order
+    Optional<T> Pop()
+    {
+        if (top == nullptr)
         {
-            if(IsEmpty()){
-                throw::underflow_error("Stack is empty");
-            }
-            return top->value;
-        } // End of peek function
+            return Optional<T>();
+        }
+        T poppedValue = top->data;
+        Node *temp = top;
+        top = top->next;
+        delete temp;
+        return Optional<T>(poppedValue);
+    } // End of pop function
 
-        // IsEmpty operation
-        bool IsEmpty()
+    // Peek operation
+    void Peek() const
+    {
+        if (top == nullptr)
         {
-            return top == nullptr;
-        } // End of IsEmtpy function
+            cout << "Stack is empty\n";
+        }
+        else
+        {
+            cout << "Top element in stack is: " << top->data << endl;
+        }
+    } // End of peek function
 
-        void Display() {
-            if (IsEmpty())
-            {
-                cout << "Stack is empty\n";
-                return;
-            }
-            Node* tmp = top;
-            while (tmp != nullptr) {
-                cout << tmp->value << endl;
-                tmp = tmp->next;
-            }
-        
-        } // End of display function
+    // IsEmpty operation
+    bool IsEmpty() const
+    {
+        return top == nullptr;
+    } // End of IsEmtpy function
 
-    }; // End of stack class
+    void Display() const
+    {
+        if (IsEmpty())
+        {
+            cout << "Stack is empty\n";
+            return;
+        }
+        Node *tmp = top;
+        while (tmp != nullptr)
+        {
+            cout << tmp->data << endl;
+            tmp = tmp->next;
+        }
+
+    } // End of display function
+
+}; // End of stack class
 
 #endif // STACK_H

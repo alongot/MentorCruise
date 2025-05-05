@@ -8,21 +8,14 @@ using namespace std;
 
 int main() {
     // Stack testing
-    Stack MyStack;
-
-    //MyStack.Pop();
-
-    //cout << "Top element after pop: " << MyStack.Peek() << endl
-     //    << endl;
-         
+    Stack <int> MyStack;
+    
     MyStack.Push(10);
     MyStack.Push(20);
     MyStack.Push(30);
 
     MyStack.Pop();
-    cout << "Top element after pop: " << MyStack.Peek() << endl
-         << endl;
-
+    MyStack.Peek();
     cout << "Displaying all values in my stack" << endl;
     MyStack.Display();
 
