@@ -45,7 +45,19 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "algorithm": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "optional": "cpp",
+        "__memory": "cpp",
+        "charconv": "cpp",
+        "chrono": "cpp",
+        "format": "cpp",
+        "system_error": "cpp",
+        "functional": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "list": "cpp",
+        "span": "cpp",
+        "forward_list": "cpp"
     },
     "github.copilot.enable": {
         "*": false,
