@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     // Stack testing
     Stack <int> MyStack;
-    
+
     MyStack.Push(10);
     MyStack.Push(20);
     MyStack.Push(30);
@@ -35,7 +35,7 @@ int main() {
     MyQueue.Top();
 
     // Singly linked list testing
-    SinglyLinkedList MyLinkedList;
+    SinglyLinkedList<int> MyLinkedList;
 
     cout << "Appending values to singly linked list\n";
     MyLinkedList.Append(11);
