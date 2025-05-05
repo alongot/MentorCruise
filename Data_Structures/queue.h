@@ -1,100 +1,78 @@
 #include <iostream>
+#include "optional.h"
 
 using namespace std;
 
+template <typename T>
+class Queue {
+private:
+    struct Node {
+        T data;     // The value of the node
+        Node* next; // Pointer to the next node
+        // Constructor to initialize node
+        Node(const T& dataValue) : data(dataValue), next(nullptr) {}
+    };
 
-class Queue{
-    private:
-        // Create a node object
-        struct Node{
-            int data;
-            Node* next;
-        };// End of struct node
+    Node* front;  // Pointer to the front of the queue
+    Node* rear;   // Pointer to the rear of the queue
 
-    public:
-        Node* front;
-        Node* rear;
-        // Check is the queue is empty
-        bool IsEmpty()
-        {
-            return front == nullptr;
-        } // end of isempty function
+public:
+    // Constructor: Initializes an empty queue
+    Queue() : front(nullptr), rear(nullptr) {}
 
-        // Create a queue constructor
-        Queue(){
-            front = NULL;
-            rear = NULL;
-        } // End of queue constructor
+    // Destructor: Cleans up all nodes in the queue
+    ~Queue() {
+        while (front != nullptr) {
+            Node* temp = front;
+            front = front->next;
+            delete temp;
+        }
+    }
 
-        ~Queue(){
-            while (!IsEmpty())
-            {
-                Node* temp = front;
-                front = front->next;
-                delete temp;
-            }
-        } // End of queue destructor
+    // Enqueue: Adds a value to the rear of the queue
+    void Enqueue(const T& value) {
+        Node* newNode = new Node(value); 
+        if (rear == nullptr) { 
+            front = rear = newNode; 
+        } else {
+            rear->next = newNode;
+            rear = newNode;       // Update the rear pointer
+        }
+    }
 
-        // Function to enqueue values to the front of the queue
-        void Enqueue(int data)
-        {
-            Node* newnode = new Node();
-            newnode->data = data;
-            newnode->next = NULL;
-            if (IsEmpty())
-            {
-                front = newnode;
-                rear = newnode;
-            }
-            else{
-                rear->next = newnode; 
-                rear = newnode;      
-            }
-        } // End of enqueue function
+    // Dequeue: Removes a value from the front of the queue
+    Optional<T> Dequeue() {
+        if (front == nullptr) {  // If the queue is empty
+            return Optional<T>(); 
+        }
+        T dequeuedValue = front->data;  // Get the value at the front
+        Node* temp = front;
+        front = front->next;  
+        if (front == nullptr) {  // 
+            rear = nullptr; // Set the rear to nullptr
+        }
+        delete temp;  // Delete the old front node
+        return Optional<T>(dequeuedValue);  
+    }
 
-        // Function to dequque values in FIFO order
-        void Dequeue()
-        {
-            if (IsEmpty())
-            {
-                throw::underflow_error("Queue is empty");
-            }
-            else{
-                Node* temp = front;
-                front = front->next;
-                delete temp;
-            }
-        } // End of dequeue function
+    bool isEmpty() const {
+        return front == nullptr; 
+    }
+    void Top() const {
+        if (front == nullptr) {  // If the queue is empty
+            cout << "Queue is empty!" << endl;  
+        } else {
+            cout << "Top element: " << front->data << endl; 
+        }
+    }
 
-        // Function to see the queue
-        void Display(){
-            if (IsEmpty())
-            {
-                cout << "Queue is empty" << endl;
-                return;
-            }
-            else
-            {
-                Node* temp = front;
-                while(temp != nullptr){
-                    cout << temp->data << endl;
-                    temp = temp->next;
-                }
-            }
-        }// End of display function
-
-        //Function to see top of queue
-        void Top(){
-            if (IsEmpty())
-            {
-                cout << "Queue is empty" << endl;
-                return;
-            }
-            else
-            {
-                Node* temp = front;
-                cout << temp->data << endl;
-            }
-        } // End of top function
-
-}; // End of queue class
+    // Display: Prints all elements in the queue
+    void Display() const {
+        Node* temp = front;
+        while (temp != nullptr) {  // Traverse the queue
+            cout << temp->data << " ";  // Print each value
+            temp = temp->next;  // Move to the next node
+        }
+        cout << endl;
+    }
+};

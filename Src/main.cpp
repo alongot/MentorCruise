@@ -27,7 +27,7 @@ int main() {
     MyStack.Display();
 
     //Queue testing
-    Queue MyQueue;
+    Queue<int> MyQueue;
     //MyQueue.Dequeue();
     MyQueue.Enqueue(11);
     MyQueue.Enqueue(12);
