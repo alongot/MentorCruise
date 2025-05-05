@@ -7,14 +7,14 @@ using namespace std;
 
 // Test case for checking if the list is initially empty
 BOOST_AUTO_TEST_CASE(ListInitiallyEmpty) {
-    SinglyLinkedList list;
+    SinglyLinkedList<int> list;
     cout << "Checking if list is initially empty..." << endl;
     BOOST_TEST(list.IsEmpty());
 }
 
 // Test case for appending multiple values to the list
 BOOST_AUTO_TEST_CASE(AppendingMultipleElements) {
-    SinglyLinkedList list;
+    SinglyLinkedList<int> list;
     cout << "Appending values 1, 2, 3 to the list..." << endl;
     list.Append(1);
     list.Append(2);
@@ -40,7 +40,7 @@ BOOST_AUTO_TEST_CASE(AppendingMultipleElements) {
 
 // Test case for accessing the top element after multiple appends
 BOOST_AUTO_TEST_CASE(TopElementAfterAppend) {
-    SinglyLinkedList list;
+    SinglyLinkedList <int> list;
     list.Append(10);
     list.Append(20);
     list.Append(30);
@@ -53,7 +53,7 @@ BOOST_AUTO_TEST_CASE(TopElementAfterAppend) {
 
 // Test case for verifying the correct behavior when accessing an empty list
 BOOST_AUTO_TEST_CASE(AccessingEmptyList) {
-    SinglyLinkedList list;
+    SinglyLinkedList <int> list;
     cout << "Attempting to access top node of an empty list..." << endl;
     auto temp = list.GetTop();
     BOOST_TEST(temp == nullptr);

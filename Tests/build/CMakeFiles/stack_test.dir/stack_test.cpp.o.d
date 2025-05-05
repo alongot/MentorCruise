@@ -1547,4 +1547,5 @@ CMakeFiles/stack_test.dir/stack_test.cpp.o: \
   /usr/local/include/boost/utility/value_init.hpp \
   /usr/local/include/boost/core/invoke_swap.hpp \
   /usr/local/include/boost/type_traits/is_volatile.hpp \
-  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Tests/../Data_Structures/stack.h
+  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Tests/../Data_Structures/stack.h \
+  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Tests/../Data_Structures/optional.h

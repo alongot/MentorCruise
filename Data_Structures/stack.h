@@ -57,27 +57,27 @@ public:
     } // End of pop function
 
     // Peek operation
-    void Peek() const
+    Optional<T> Peek() const
     {
         if (top == nullptr)
         {
-            cout << "Stack is empty\n";
+            return Optional<T>();
         }
         else
         {
-            cout << "Top element in stack is: " << top->data << endl;
+            return Optional<T>(top->data);
         }
     } // End of peek function
 
     // IsEmpty operation
-    bool IsEmpty() const
+    bool isEmpty() const
     {
         return top == nullptr;
     } // End of IsEmtpy function
 
     void Display() const
     {
-        if (IsEmpty())
+        if (isEmpty())
         {
             cout << "Stack is empty\n";
             return;

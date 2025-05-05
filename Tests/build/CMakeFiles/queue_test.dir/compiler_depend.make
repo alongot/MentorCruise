@@ -1008,6 +1008,7 @@ CMakeFiles/queue_test.dir/queue_test.cpp.o: /Users/alon/MentorCruise/Data\ Struc
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
+  /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Data_Structures/optional.h \
   /Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Data_Structures/queue.h \
   /usr/local/include/boost/algorithm/cxx11/all_of.hpp \
   /usr/local/include/boost/assert.hpp \
@@ -3688,6 +3689,8 @@ CMakeFiles/queue_test.dir/queue_test.cpp.o: /Users/alon/MentorCruise/Data\ Struc
 /usr/local/include/boost/mpl/next.hpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__type_traits/lazy.h:
+
+/Users/alon/MentorCruise/Data\ Structures\ 1/Stack/Data_Structures/optional.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/ranges_sort.h:
 

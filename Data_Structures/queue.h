@@ -43,7 +43,7 @@ public:
     // Dequeue: Removes a value from the front of the queue
     Optional<T> Dequeue() {
         if (front == nullptr) {  // If the queue is empty
-            return Optional<T>(); 
+            throw std::underflow_error("Queue is empty");
         }
         T dequeuedValue = front->data;  // Get the value at the front
         Node* temp = front;
@@ -74,5 +74,18 @@ public:
             temp = temp->next;  // Move to the next node
         }
         cout << endl;
+    }
+
+
+    // For testing
+    // Returns the value at the front of the queue (if it exists)
+    Optional<T> GetFront() const {
+        if (front == nullptr) return Optional<T>();  // Queue is empty
+        return Optional<T>(front->data);
+    }
+    
+    Optional<T> GetRear() const {
+        if (rear == nullptr) return Optional<T>();  // Queue is empty
+        return Optional<T>(rear->data);
     }
 };
