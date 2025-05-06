@@ -95,7 +95,7 @@ public:
 
     // Contains method, check if list contains target elemetn
     // Contains method, check if list contains target elemetn
-    bool Contains(int data)
+    bool Contains(const T &data)
     {
         if (IsEmpty())
         {

@@ -3,6 +3,8 @@
 #include <array>
 #include "../Data_Structures/queue.h"
 #include "../Data_Structures/singly_linked_list.h"
+#include "../Data_Structures/linear_doubly_linked_list.h"
+
 
 using namespace std;
 
@@ -53,10 +55,12 @@ int main() {
     MyLinkedList.Deletion(11);
     MyLinkedList.Display();
 
+    /*
     int target;
     cout << "Enter a number to check if it's in the list: ";
     cin >> target;
 
+    
     if (MyLinkedList.Contains(target))
     {
         cout << "Linked list contains " << target << endl;
@@ -65,6 +69,33 @@ int main() {
     {
         cout << "Linked list does not contain " << target << endl;
     }
+    */
+
+    LinearDoublyLinkedList<int> MyLinearDoublyLinkedList;
+    
+    MyLinearDoublyLinkedList.InsertSorted(11);
+    MyLinearDoublyLinkedList.InsertSorted(3);
+    MyLinearDoublyLinkedList.InsertSorted(2);
+    MyLinearDoublyLinkedList.InsertSorted(12);
+    MyLinearDoublyLinkedList.InsertSorted(03);
+
+    cout << "Displaying values in doubly linked list: \n";
+    MyLinearDoublyLinkedList.Display();
+
+    cout << "Displaying values in doubly linked list after deletion: \n";
+    MyLinearDoublyLinkedList.Deletion(12);
+    MyLinearDoublyLinkedList.Display();
+
+    int target = 5;
+    if (MyLinearDoublyLinkedList.Contains(target))
+    {
+        cout << "Linked list contains " << target << endl;
+    }
+    else
+    {
+        cout << "Linked list does not contain " << target << endl;
+    }
+
 
     return 0;
 } // End of main
