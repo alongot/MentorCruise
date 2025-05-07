@@ -22,6 +22,9 @@ public:
 
     // Destructor: Cleans up all nodes in the queue
     ~Queue() {
+        if (front == nullptr){
+            return;
+        }
         while (front != nullptr) {
             Node* temp = front;
             front = front->next;

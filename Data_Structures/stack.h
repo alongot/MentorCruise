@@ -26,6 +26,9 @@ public:
     // Destructor to free memory
     ~Stack()
     {
+        if (top == nullptr){
+            return;
+        }
         while (top != nullptr)
         {
             Node *temp = top;

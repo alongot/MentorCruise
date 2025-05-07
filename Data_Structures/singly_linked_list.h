@@ -26,6 +26,9 @@ public:
     ~SinglyLinkedList()
     {
         Node *tmp = top;
+        if (top == nullptr){
+            return;
+        }
         while (tmp != nullptr)
         {
             Node *nextNode = tmp->next;

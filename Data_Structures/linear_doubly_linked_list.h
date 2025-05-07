@@ -27,6 +27,10 @@ public:
     ~LinearDoublyLinkedList()
     {
         Node* tmp = top;
+        if (top == nullptr){
+            return;
+        }
+        
         while (tmp != nullptr) {
             Node* nextNode = tmp->next;
             delete tmp;
@@ -156,7 +160,7 @@ public:
         }
     }// End of display function
     */
-   
+
     // Iterator class to traverse through list 
     class Iterator {
         Node* current;

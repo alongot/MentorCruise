@@ -4,6 +4,7 @@
 #include "../Data_Structures/queue.h"
 #include "../Data_Structures/singly_linked_list.h"
 #include "../Data_Structures/linear_doubly_linked_list.h"
+#include "../Data_Structures/circular_doubly_linked_list.h"
 
 
 using namespace std;
@@ -99,6 +100,28 @@ int main() {
         cout << "Linked list does not contain " << target << endl;
     }
 
+    CircularDoublyLinkedList<int> MyCircularDoublyLinkedList;
+    
+    MyCircularDoublyLinkedList.InsertSorted(11);
+    MyCircularDoublyLinkedList.InsertSorted(3);
+    MyCircularDoublyLinkedList.InsertSorted(2);
+    MyCircularDoublyLinkedList.InsertSorted(12);
+    MyCircularDoublyLinkedList.InsertSorted(03);
+
+    cout << "Displaying values in circular doubly linked list: \n";
+    MyCircularDoublyLinkedList.Display();
+    cout << "Displaying values in circular doubly linked list after deletion: \n";
+    MyCircularDoublyLinkedList.Deletion(3);
+    MyCircularDoublyLinkedList.Display();
+
+    if (MyCircularDoublyLinkedList.Contains(target))
+    {
+        cout << "Linked list contains " << target << endl;
+    }
+    else
+    {
+        cout << "Linked list does not contain " << target << endl;
+    }
 
     return 0;
 } // End of main
