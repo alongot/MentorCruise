@@ -140,6 +140,7 @@ public:
         }
     } // End of contains
 
+    /*
     // Display linkedl ist
     void Display() const {
         if (isEmpty())
@@ -154,8 +155,48 @@ public:
             tmp = tmp->next;
         }
     }// End of display function
+    */
+   
+    // Iterator class to traverse through list 
+    class Iterator {
+        Node* current;
+    public:
+        // Construcot with node
+        Iterator(Node* node) : current(node) {}
+        
+        // Move iterator to next node
+        Iterator& operator++() 
+        { 
+            current = current->next; return *this; 
+        }
+        
+        // Check to see if it is poitning to different nodes
+        bool operator!=(const Iterator& other) const { 
+            return current != other.current; 
+        }
+        
+        // Dereference the data
+        T& operator*() const 
+        { 
+            return current->data; 
+        }
 
+    };
+
+    // Return iterator pointing to first node
+    Iterator begin() const
+    { 
+        return Iterator(top); 
+    }
+    // return iterator pointing to nullptr
+    Iterator end() const
+    {
+        return Iterator(nullptr); 
+    }
+    
 
 }; // End of Doubly List Class
+
+
 
 #endif

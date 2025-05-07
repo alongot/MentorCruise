@@ -80,12 +80,15 @@ int main() {
     MyLinearDoublyLinkedList.InsertSorted(03);
 
     cout << "Displaying values in doubly linked list: \n";
-    MyLinearDoublyLinkedList.Display();
+    for(int val : MyLinearDoublyLinkedList){
+        cout << val << " "; 
+    }
 
     cout << "Displaying values in doubly linked list after deletion: \n";
     MyLinearDoublyLinkedList.Deletion(12);
-    MyLinearDoublyLinkedList.Display();
-
+    for(int val : MyLinearDoublyLinkedList){
+        cout << val << " "; 
+    }
     int target = 5;
     if (MyLinearDoublyLinkedList.Contains(target))
     {
