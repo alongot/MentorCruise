@@ -5,6 +5,7 @@
 #include "../Data_Structures/singly_linked_list.h"
 #include "../Data_Structures/linear_doubly_linked_list.h"
 #include "../Data_Structures/circular_doubly_linked_list.h"
+#include "../Data_Structures/binary_search_tree.h"
 
 
 using namespace std;
@@ -122,6 +123,27 @@ int main() {
     {
         cout << "Linked list does not contain " << target << endl;
     }
+
+    BST<int> tree;
+
+    tree.insert(50);
+    tree.insert(30);
+    tree.insert(70);
+    tree.insert(20);
+    tree.insert(40);
+    tree.insert(60);
+    tree.insert(80);
+
+    cout << "In-order traversal: ";
+    tree.inorder(); // 20 30 40 50 60 70 80
+
+    cout << "Contains 40? " << (tree.contains(40) ? "Yes" : "No") << endl;
+    cout << "Contains 100? " << (tree.contains(100) ? "Yes" : "No") << endl;
+
+    tree.remove(30);
+
+    cout << "In-order after deleting 30: ";
+    tree.inorder(); // 20 40 50 60 70 80
 
     return 0;
 } // End of main
